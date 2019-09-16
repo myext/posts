@@ -4,9 +4,9 @@
    Data shared between two tables ( users and posts ). It will helpful if add authorization.
 
 php 7+
-mySql
-JQuery
+JavaScript(JQuery)
 AJAX
 JSON
 =======
+MySQL
 Apache
