@@ -153,18 +153,24 @@ $(document).ready(function() {
         if(dat.email) name = '<a href="' + dat.email + '">'+ dat.fullname +'</a>';
         else name = dat.fullname;
 
-        let start = new Date(dat.date);
+        let start = new Date.parse(dat.date);
 
         let now = new Date();
         let ago = new Date((now - start));
 
+        let Y = "";
+        let M = '';
+        let d = '';
         let h = '';
         let m = '';
 
+        if(ago.getUTCFullYear() - 1970) Y = (ago.getUTCFullYear() - 1970) +'Y ';
+        if(ago.getUTCMonth()) M = ago.getUTCMonth() +'M ';
+        if(ago.getUTCDate() -1) d = (ago.getUTCDate() -1) +'d ';
         if(ago.getUTCHours()) h = ago.getUTCHours() +'h ';
         if(ago.getUTCMinutes()) m = ago.getUTCMinutes() +'m ';
 
-        ago = h+m;
+        ago = Y+M+d+h+m;
 
         let templ = '<li><span>' + dat.date +'</span>' + name + ' , ' + ago + '<br>'
            + dat.message +  '</li>';
