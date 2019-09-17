@@ -164,13 +164,15 @@ $(document).ready(function() {
         let h = '';
         let m = '';
 
-        if(ago.getUTCFullYear() - 1970) Y = (ago.getUTCFullYear() - 1970) +'Y ';
+        
         if(ago.getUTCMonth()) M = ago.getUTCMonth() +'M ';
         if(ago.getUTCDate() -1) d = (ago.getUTCDate() -1) +'d ';
         if(ago.getUTCHours()) h = ago.getUTCHours() +'h ';
         if(ago.getUTCMinutes()) m = ago.getUTCMinutes() +'m ';
 
-        ago = Y+M+d+h+m;
+        ago = M+d+h+m;
+        
+        if(ago.getUTCFullYear()) ago = 'more than a year ago';
 
         let templ = '<li><span>' + dat.date +'</span>' + name + ' , ' + ago + '<br>'
            + dat.message +  '</li>';
