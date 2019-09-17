@@ -158,7 +158,6 @@ $(document).ready(function() {
         let now = new Date();
         let ago = new Date((now - start));
 
-        let Y = "";
         let M = '';
         let d = '';
         let h = '';
